@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Crear Publicación
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mt-4 mb-3">Crear Publicación</h1>
+        <form action="/registrarCategoria" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" name="nombre" id="nombre">
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!-- publicaciones_por_categoria.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+    Publicaciones por Usuario
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mt-4 mb-3">Publicaciones por Usuario</h1>
+        <h2>{{ usuarios.nombre }}</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Imagen</th>
+                        <!-- Otras columnas necesarias -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in publi %}
+                        <tr>
+                            <td><a href="/publicacion/{{ p.idPublicacion }}">{{ p.nombre }}</a></td>
+                            <td>{{ p.descripcion }}</td>
+                            <td><img src="/consultarImgPublicacion/{{ p.idPublicacion }}" width="100" height="80" class="img-fluid"></td>
+                            <!-- Otras columnas necesarias -->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a href="/publicaciones" class="btn btn-secondary">Regresar a todas las publicaciones</a>
+    </div>
+{% endblock %}

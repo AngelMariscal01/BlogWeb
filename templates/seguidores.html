@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Mis Seguidores
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mt-4 mb-3">Mis Seguidores</h1>
+        <div class="list-group">
+            {% for seguidor in seguidores %}
+                <a href="/publicacionesUsuario/{{seguidor.idUsuario}}">{{seguidor.nombre}}</a>
+                <a href="/eliminar_seguidor/{{ seguidor.idUsuario }}" class="btn btn-danger btn-sm">Eliminar</a>
+            {% endfor %}
+        </div>
+        <a href="/menu" class="btn btn-secondary mt-3">Regresar al Menú</a>
+    </div>
+{% endblock %}
+
+

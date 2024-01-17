@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Editar Publicación
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mt-4 mb-3">Editando Publicación</h1>
+        <form action="/editarPublicacion/{{ publi.idPublicacion }}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="txtNomPubli">Nombre</label>
+                <input type="text" class="form-control" name="txtNomPubli" id="txtNomPubli" value="{{ publi.nombre }}">
+            </div>
+            <div class="form-group">
+                <label for="txtDescPubli">Descripción</label>
+                <input type="text" class="form-control" name="txtDescPubli" id="txtDescPubli" value="{{ publi.descripcion }}">
+            </div>
+            <div class="form-group">
+                <label for="fotoP">Foto</label>
+                <input type="file" class="form-control-file" name="fotoP" id="fotoP">
+            </div>
+            <button type="submit" class="btn btn-primary">Editar Publicación</button>
+        </form>
+        <a href="/publicaciones" class="btn btn-secondary mt-3">Regresar</a>
+    </div>
+{% endblock %}

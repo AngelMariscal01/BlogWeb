@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Iniciar Sesión
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mt-4 mb-3">Inicio de Sesión</h1>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" class="form-control" name="correo" id="correo">
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" class="form-control" name="contrasena" id="contrasena">
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        </form>
+        <h1>{{ msg }}</h1>
+        <p>¿No tienes una cuenta? <a href="/registrarUsuario">Regístrate</a></p>
+    </div>
+{% endblock %}
